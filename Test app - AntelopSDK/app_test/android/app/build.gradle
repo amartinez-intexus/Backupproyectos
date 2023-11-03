@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.intexus.pocantelop"
+        minSdk 24
+        targetSdk 33
+        versionCode 9
+        versionName "1.3"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", '"http://200.119.85.82:402/TarjetaDigitalService.svc/"'
+            buildConfigField "String", "ANTELOP_URL", '"https://api.antelop.net/api/v1/digitalCards/"'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFile 'dont-adapt-antelop-native-lib.pro'
+        }
+        debug {
+            buildConfigField "String", "BASE_URL", '"http://192.168.1.110:8880/TarjetaDigitalService.svc/"'
+            buildConfigField "String", "ANTELOP_URL", '"https://api.antelop.net/api/v1/digitalCards/"'
+            proguardFiles 'proguard-rules.pro'
+            proguardFile 'dont-adapt-antelop-native-lib.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    packagingOptions {
+        doNotStrip "*/*/libscm.so"
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.0.5'
+    implementation 'androidx.work:work-runtime:2.7.1'
+    implementation(name:'sdk', ext: 'aar')
+
+    implementation 'io.insert-koin:koin-androidx-scope:2.2.3'
+    implementation 'io.insert-koin:koin-androidx-viewmodel:2.2.3'
+    implementation 'io.insert-koin:koin-androidx-fragment:2.2.3'
+    implementation 'io.insert-koin:koin-androidx-workmanager:2.2.3'
+    implementation 'io.insert-koin:koin-androidx-ext:2.2.3'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.0"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+}

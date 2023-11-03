@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CaaS Digital</string>
+    <string name="pin_request_message">For wallet security reasons, you must enter a four digits pin</string>
+    <string name="id_request_message">Please type an ID to enroll</string>
+    <string name="id_label">ID</string>
+    <string name="wallet_created_success">Wallet has been created</string>
+    <string name="wallet_created_error">An error has occurred creating the wallet.</string>
+    <string name="provisioning_device_error">This device cannot host a wallet</string>
+    <string name="provisioning_error">Antelop provisioning error</string>
+    <string name="create_card_error">An error has ocurred while creating the card, please check if PAN already exists</string>
+    <string name="provisioning_paycard_error">This card is not available to pay</string>
+    <string name="confirm_positive_button">Send</string>
+    <string name="delete_reader">Are you sure you want to delete these card?</string>
+    <string name="accept">Ok</string>
+    <string name="cancel">Cancel</string>
+</resources>

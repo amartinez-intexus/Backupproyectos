@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CaaS Digital</string>
+    <string name="pin_request_message">Para mayor seguridad, debe asociarle un pin de 4 dígitos a la billetera</string>
+    <string name="id_request_message">Por favor digite un identificador para el enrolamiento</string>
+    <string name="id_label">Identificación</string>
+    <string name="wallet_created_success">Wallet registrada correctamente</string>
+    <string name="wallet_created_error">Error registrando la wallet, intente de nuevo.</string>
+    <string name="provisioning_device_error">Este dispositivo no puede almacenar una wallet</string>
+    <string name="provisioning_error">Error validando la seguridad para la wallet</string>
+    <string name="create_card_error">Ocurrió un error al crear la tarjeta, revise que el número de tarjeta no exista</string>
+    <string name="provisioning_paycard_error">La tarjeta aún no está provisionada para pagos</string>
+    <string name="confirm_positive_button">Aceptar</string>
+    <string name="delete_reader">Está seguro que desea eliminar estas tarjetas?</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+</resources>

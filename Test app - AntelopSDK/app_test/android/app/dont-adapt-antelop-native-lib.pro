@@ -1,0 +1,1 @@
+-adaptresourcefilecontents !lib/*/libscm.so
